@@ -1,0 +1,151 @@
+.cossacks {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: @hoverColor;
+    font-size: 0;
+    text-align: center;
+
+    &-head {
+      &-title {
+        color: @helpColor;
+      }
+      &-subs {
+        color: @helpColor;
+      }
+    }
+    &-content {
+      text-align: left;
+      &-slider {
+        width: 404px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        position: relative;
+        border-radius: 15px;
+        &-line {
+          position: absolute;
+          width: 2828px;
+          left: 0;
+          top: 0;
+          transition: 0.2s;
+          animation: scrollerCossacks 28s infinite;
+          &-pic {
+            width: 404px;
+            height: auto;
+          }
+        }
+      }
+      &-text {
+        &-title {
+          margin-left: 15px;
+          .fontStyle(@helpColor, 16px,@ffMontserrat);
+          font-weight: 100;
+          text-transform: uppercase;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        &-subs {
+          margin-left: 15px;
+          .fontStyle(@helpColor, 14px,@ffMontserrat);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .cossacks {
+      &-content {
+        &-slider {
+          width: 360px;
+          height: 178px;
+
+          &-line {
+            position: absolute;
+            width: 2520px;
+            animation: scrollerCossacksMedium 28s infinite;
+            &-pic {
+              width: 360px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cossacks {
+      &-content {
+        &-slider {
+          width: 290px;
+          height: 144px;
+
+          &-line {
+            position: absolute;
+            width: 2520px;
+            animation: scrollerFairMedium 28s infinite;
+            &-pic {
+              width: 360px;
+            }
+          }
+        }
+        &-text {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+
+
+  @keyframes  scrollerCossacks {
+    0% {
+      left: 0
+    }
+    14% {
+      left: -404px;
+    }
+    28% {
+      left: -808px;
+    }
+    42% {
+      left: -1212px;
+    }
+    56% {
+      left: -1616px;
+    }
+    70% {
+      left: -2020px;
+    }
+    84% {
+      left: -2424px;
+    }
+    98% {
+      left: 0;
+    }
+  }
+  @keyframes  scrollerCossacksMedium {
+    0% {
+      left: 0
+    }
+    14% {
+      left: -360px;
+    }
+    28% {
+      left: -720px;
+    }
+    42% {
+      left: -1080px;
+    }
+    56% {
+      left: -1440px;
+    }
+    70% {
+      left: -1800px;
+    }
+    84% {
+      left: -2160px;
+    }
+    98% {
+      left: 0;
+    }
+  }

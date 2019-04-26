@@ -1,0 +1,226 @@
+.moments {
+  padding-top: 40px;
+  min-height: 696px;
+  padding-bottom: 40px;
+  background: @hoverColor;
+  font-size: 0;
+  text-align: center;
+  &-head {
+    &-title {
+      color: @titleGreenColor;
+    }
+    &-subs {
+      color: @textGreenColor;
+    }
+  }
+  &-listBtn {
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid @textGreenColor;
+    border-radius: 15px;
+    background: white;
+    overflow: hidden;
+    &-item {
+      transition: 0.3s;
+      line-height: 1;
+      display: inline-block;
+      .fontStyle(@textGreenColor, 16px, @ffProximaNova);
+      padding: 8px 17px 8px 17px;
+      border-right: 1px solid @textGreenColor;
+      cursor: pointer;
+      &:last-child {
+        border: none;
+      }
+      &:hover {
+        background: @textGreenColor;
+        color: white;
+      }
+    }
+    & > .activeBtn {
+      background: @textGreenColor;
+      color: white;
+    }
+  }
+  &-gallery {
+    margin: 55px auto 40px auto;
+    width: 950px;
+    &-item {
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 20%;
+      display: inline-block;
+      &:hover .moments-gallery-item-hover {
+        height: 100%;
+      }
+      &-container {
+        width: 100%;
+        position: relative;
+      }
+      &-pic {
+        width: 100%;
+        height: auto;
+      }
+      &-hover {
+        cursor: pointer;
+        transition: 0.3s;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        background: rgba(255,255,255, 0.4);
+        & > span {
+          display: inline-block;
+          color: @textGreenColor;
+          font-size: 35px;
+          vertical-align: middle;
+        }
+        &:before {
+          content: "";
+          font-size: 0;
+          display: inline-block;
+          height: 100%;
+          width: 0;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  &-btn {
+    transition: 0.3s;
+    border: none;
+    border-radius: 20px;
+    background: @textGreenColor;
+    padding: 9px 17px 9px 17px;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    .fontStyle(white, 18px, @ffProximaNova);
+    &:hover {
+      background: linear-gradient(@helpColor, @hoverColor, @helpColor);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.modalSlider {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background: rgba(225,243,225, 0.5);
+  .verticalAlign();
+  text-align: center;
+  overflow: scroll;
+  transition: 0.3s;
+  &-container {
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 740px;
+    position: relative;
+    transition: 0.3s;
+    &-pic {
+      max-width: 100%;
+      transition: 0.3s;
+    }
+    &-btn {
+        line-height: 1;
+        height: 35px;
+        width: 35px;
+        font-size: 20px;
+        display: inline-block;
+        padding: 3px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid @titleGreenColor;
+        color: #F7B217;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.3s;
+        cursor: pointer;
+        box-shadow: 2px 2px 2px #2C2C2C;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          color: white;
+          background: @titleGreenColor;
+        }
+      }
+    &-btnMove {
+      position: absolute;
+      font-size: 25px;
+      padding: 5px 10px 5px 10px;
+      border-radius: 5px;
+      //border: 2px @colorText solid;
+      border: none;
+      color: white;
+      text-shadow: #5e5e5e 3px 3px 3px;
+      background: #3eba3e;
+      transition: 0.3s;
+      left: 50%;
+      transition: 0.3s;
+      bottom: -50px;
+      &_left {
+        transform: translateX(-50px);
+      }
+      &:hover {
+        background: @titleGreenColor;
+        text-shadow: #2C2C2C;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .moments {
+    &-listBtn {
+      &-item {
+      }
+    }
+    &-gallery {
+      width: 740px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .moments {
+    &-listBtn {
+      &-item {
+        font-size: 14px;
+        padding: 5px 5px 5px 5px;
+      }
+    }
+    &-gallery {
+      width: auto;
+      margin-top: 40px;
+      margin-bottom: 25px;
+      &-item {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 33.33%;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .moments {
+    &-gallery {
+      &-item {
+        width: 50%;
+      }
+    }
+  }
+}

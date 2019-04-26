@@ -1,0 +1,25 @@
+.fontStyle(@col, @fz, @ff) {
+  color: @col;
+  font-size: @fz;
+  font-family: @ff;
+};
+
+.verticalAlign() {
+  &:after {
+    content: '';
+    font-size: 0;
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.clearFix() {
+  &:after {
+    display: block;
+    height: 0;
+    content: "";
+    font-size: 0;
+    clear: both;
+  }
+}

@@ -1,0 +1,179 @@
+.history {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: @hoverColor;
+  font-size: 0;
+  text-align: center;
+
+  &-head {
+    &-title {
+      color: @titleGreenColor;
+    }
+
+    &-subs {
+      color: @textGreenColor;
+    }
+  }
+
+  &-listBtn {
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid @textGreenColor;
+    border-radius: 15px;
+    background: white;
+    overflow: hidden;
+
+    &-item {
+      transition: 0.3s;
+      line-height: 1;
+      display: inline-block;
+      .fontStyle(@textGreenColor, 16px, @ffProximaNova);
+      padding: 8px 17px 8px 17px;
+      border-right: 1px solid @textGreenColor;
+      cursor: pointer;
+
+      &:last-child {
+        border: none;
+      }
+
+      &:hover {
+        background: @textGreenColor;
+        color: white;
+      }
+    }
+
+    & > .activeBtn {
+      background: @textGreenColor;
+      color: white;
+    }
+  }
+  &-info {
+    margin-top: 30px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: #F7B217;
+    border-bottom-left-radius: 0;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.1;
+    padding: 10px;
+    & > span {
+      margin-left: 5px;
+      display: block;
+      line-height: 1.1;
+    }
+  }
+  &-cards {
+    margin-top: 5px;
+    position: relative;
+    &-btn {
+      position: absolute;
+      font-size: 25px;
+      padding: 10px 5px 10px 5px;
+      border-radius: 5px;
+      //border: 2px @colorText solid;
+      border: none;
+      color: white;
+      text-shadow: #5e5e5e 3px 3px 3px;
+      background: #3eba3e;
+      transition: 0.3s;
+      transform: translateY(-50%);
+      z-index: 2;
+      &:hover {
+        background: @titleGreenColor;
+      }
+      &:focus {
+        outline: none;
+       }
+      &_previous {
+        left: 0;
+        top: 244px;
+      }
+      &_next {
+        top: 244px;
+        right: 0;
+      }
+    }
+    & > .containerWrap {
+      width: 662px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+    }
+    &-list {
+      font-size: 0;
+      width: 5296px;
+      transition: 0.4s;
+      text-align: left;
+      &-item {
+        vertical-align: middle;
+        width: 662px;
+        min-height: 500px;
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        overflow: hidden;
+        &-old {
+          position: absolute;
+          left: 0;
+          top: 0;
+          overflow: hidden;
+          z-index: 1;
+          transition: 0.3s;
+          padding: 5px;
+          background: @liteBg;
+          border: 1px solid @colorText;
+        }
+        &-new {
+          padding: 5px;
+          background: @liteBg;
+          border: 1px solid @colorText;
+        }
+        &-pic {
+          width: 650px;
+        }
+      }
+    }
+  }
+}
+.ActiveVillage {
+  background: @helpColor;
+  color: white;
+}
+@media (max-width: 767px) {
+  .history {
+    &-listBtn {
+      &-item {
+        font-size: 14px;
+        padding: 5px 5px 5px 5px;
+      }
+    }
+    &-cards {
+      &-btn {
+        top: 108px;
+        &_next {
+        }
+      }
+      & > .containerWrap {
+        width: 300px;
+      }
+      &-list {
+        width: 2400px;
+        &-item {
+          width: 300px;
+          min-height: 250px;
+          &-old {
+
+          }
+          &-pic {
+            width: 288px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

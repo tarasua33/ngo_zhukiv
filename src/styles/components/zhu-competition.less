@@ -1,0 +1,154 @@
+.competition {
+  background: url("../img/bgMV.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed ;
+  font-size: 0;
+  text-align: center;
+  &-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: rgba(32,123,32, 0.4);
+  }
+  &-head {
+    &-title {
+      color: @colorLiteGray;
+    }
+  }
+  &-content {
+    text-align: left;
+    &-slider {
+      width: 404px;
+      height: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 15px;
+      &-line {
+        position: absolute;
+        width: 2828px;
+        right: 0;
+        top: 0;
+        transition: 0.3s;
+        animation: scrollerCompet 26s infinite;
+        &-pic {
+          width: 404px;
+          height: auto;
+        }
+      }
+    }
+    &-text {
+      &-title {
+        margin-left: 15px;
+        .fontStyle(@colorLiteGray, 16px,@ffMontserrat);
+        font-weight: 100;
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      &-subs {
+        margin-left: 15px;
+        .fontStyle(@colorLiteGray, 14px,@ffMontserrat);
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .competition {
+    &-content {
+      &-slider {
+        width: 360px;
+        height: 178px;
+
+        &-line {
+          position: absolute;
+          width: 2520px;
+          animation: scrollerCompetMedium 26s infinite;
+          &-pic {
+            width: 360px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .competition {
+    &-content {
+      &-slider {
+        width: 290px;
+        height: 144px;
+        margin-top: 15px;
+        &-line {
+          position: absolute;
+          width: 2520px;
+          animation: scrollerCompetMedium 26s infinite;
+          &-pic {
+            width: 360px;
+          }
+        }
+      }
+      &-text {
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+
+@keyframes  scrollerCompet {
+  0% {
+    right: 0
+  }
+  14% {
+    right: -404px;
+  }
+  28% {
+    right: -808px;
+  }
+  42% {
+    right: -1212px;
+  }
+  56% {
+    right: -1616px;
+  }
+  70% {
+    right: -2020px;
+  }
+  84% {
+    right: -2424px;
+  }
+  98% {
+    right: 0;
+  }
+}
+@keyframes  scrollerCompetMedium {
+  0% {
+    right: 0
+  }
+  14% {
+    right: -360px;
+  }
+  28% {
+    right: -720px;
+  }
+  42% {
+    right: -1080px;
+  }
+  56% {
+    right: -1440px;
+  }
+  70% {
+    right: -1800px;
+  }
+  84% {
+    right: -2160px;
+  }
+  98% {
+    right: 0;
+  }
+}
